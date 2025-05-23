@@ -1,0 +1,26 @@
+--- Зчитуємо та конвертуємо всі анотації в тимчасовий каталог ---
+Починаємо конвертацію COCO JSON: /content/HRSID/HRSID_JPG/annotations/train2017.json
+Конвертація анотацій: 100%|██████████| 3642/3642 [00:01<00:00, 2764.53it/s]
+Конвертацію завершено. Створено 3642 YOLO-файлів міток.
+Починаємо конвертацію COCO JSON: /content/HRSID/HRSID_JPG/annotations/test2017.json
+Конвертація анотацій: 100%|██████████| 1961/1961 [00:01<00:00, 1933.24it/s]
+Конвертацію завершено. Створено 1961 YOLO-файлів міток.
+
+--- Розділяємо та копіюємо файли до фінальних каталогів ---
+Копіюємо 700 файлів до train набору...
+Копіювання до train: 100%|██████████| 700/700 [00:01<00:00, 413.93it/s]
+Копіюємо 150 файлів до val набору...
+Копіювання до val: 100%|██████████| 150/150 [00:00<00:00, 307.71it/s]
+Копіюємо 150 файлів до test набору...
+Копіювання до test: 100%|██████████| 150/150 [00:00<00:00, 540.58it/s]
+
+--- Процес підготовки датасету завершено ---
+Ваш датасет у форматі YOLO-полігонів знаходиться за адресою: /content/HRSID_YOLO_Format/
+Тепер ви можете оновити шляхи у вашому основному скрипті навчання YOLOv8:
+train_images_dir = "/content/HRSID_YOLO_Format/train/images"
+train_labels_dir = "/content/HRSID_YOLO_Format/train/labels"
+val_images_dir = "/content/HRSID_YOLO_Format/val/images"
+val_labels_dir = "/content/HRSID_YOLO_Format/val/labels"
+test_images_dir = "/content/HRSID_YOLO_Format/test/images"
+test_labels_dir = "/content/HRSID_YOLO_Format/test/labels"
+Також переконайтеся, що model_type встановлено на 'yolov8s-seg.pt'.
